@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Horc-Blog</title>
+    <link>https://horc-fn.github.io/about/</link>
+    <description>Recent content in Abouts on Horc-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://horc-fn.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>https://horc-fn.github.io/about/blog/</link>
+      <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://horc-fn.github.io/about/blog/</guid>
+      <description>
+
+&lt;p&gt;About About Me
+Ni-co-ni-co-ni~~&lt;/p&gt;
+
+&lt;p&gt;Ni-co-ni-co-ni~~
+Ni-co-ni-co-ni~~&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;呵呵&#34;&gt;呵呵&lt;/h1&gt;
+
+&lt;h2 id=&#34;呵呵-1&#34;&gt;呵呵&lt;/h2&gt;
+
+&lt;h3 id=&#34;呵呵-2&#34;&gt;呵呵&lt;/h3&gt;
+
+&lt;h5 id=&#34;呵呵-3&#34;&gt;呵呵&lt;/h5&gt;
+
+&lt;h2 id=&#34;呵呵-4&#34;&gt;&lt;em&gt;&lt;strong&gt;呵呵&lt;/strong&gt;&lt;/em&gt;&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ssda&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

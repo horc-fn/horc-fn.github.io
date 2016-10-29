@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Horc-Blog</title>
+    <link>https://horc-fn.github.io/categories/blog/</link>
+    <description>Recent content in Blog on Horc-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://horc-fn.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hexo 搭建静态博客</title>
+      <link>https://horc-fn.github.io/note/blog/</link>
+      <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://horc-fn.github.io/note/blog/</guid>
+      <description>
+
+&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+
+&lt;p&gt;一直觉得自己的记性太烂,搭个博客记点东西吧。
+本文使用&lt;font size=&#34;+2&#34; style=&#34;color: #00FFFF;&#34;&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;&lt;/font&gt;搭建博客并部署至GitHub。废话不多说啦,马上开始吧~&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;环境搭建&#34;&gt;环境搭建&lt;/h2&gt;
+
+&lt;h3 id=&#34;安装node-js&#34;&gt;安装Node.js&lt;/h3&gt;
+
+&lt;p&gt;进入&lt;font size=&#34;+2&#34; style=&#34;color: #00FFFF;&#34;&gt;&lt;a href=&#34;https://nodejs.org/en/&#34;&gt;Node.js官网&lt;/a&gt;&lt;/font&gt;下载,一路安装保持默认配置即可。
+&amp;gt; &lt;strong&gt;Linux&lt;/strong&gt; 下使用命令安装更加便捷。
+&amp;gt; &lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;:源码安装需要Python环境~&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;安装git&#34;&gt;安装Git&lt;/h3&gt;
+
+&lt;p&gt;点击进入&lt;font size=&#34;+2&#34; style=&#34;color: #00FFFF;&#34;&gt;&lt;a href=&#34;https://git-scm.com/download/&#34;&gt;Git官网&lt;/a&gt;&lt;/font&gt;下载并安装。
+&amp;gt; &lt;strong&gt;Linux&lt;/strong&gt; 下使用命令安装更加便捷。
+&amp;gt; &lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;:目前的 &lt;strong&gt;Git&lt;/strong&gt; 已经打包有mini Bash终端,不需要额外安装一些Cygwin这类模拟环境。&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;hexo的安装配置&#34;&gt;Hexo的安装配置&lt;/h2&gt;
+
+&lt;h3 id=&#34;安装hexo&#34;&gt;安装hexo&lt;/h3&gt;
+
+&lt;p&gt;环境搭建好之后,打开Git/Cmd命令行,执行如下命令:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -g hexo-cli
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;初始化hexo&#34;&gt;初始化hexo&lt;/h3&gt;
+
+&lt;p&gt;初始化目录{文件夹,eg:/d/hexo},&lt;strong&gt;并进入目录&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo init &amp;lt;folder&amp;gt;
+$ cd &amp;lt;folder&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hexo 即会在目标目录下建立网站所需要的所有文件。
+之后在初始化完成后的目录下运行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;会在其中安装node_modules。&lt;/p&gt;
+
+&lt;h3 id=&#34;启动hexo服务&#34;&gt;启动hexo服务&lt;/h3&gt;
+
+&lt;p&gt;如果到目前为止一切顺利,那么赶快运行下面的命令,来看看效果吧~&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo generate #或者:hexo g
+$ hexo server   #或者:hexo s
+[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;没错,此时Hexo Server已经启动了,打开浏览器,访问 localhost:4000/,这时可看到Hexo已为你生成了一篇blog。&lt;/p&gt;
+
+&lt;p&gt;按Ctrl+C 停止Server。&lt;/p&gt;
+
+&lt;h3 id=&#34;发布新blog&#34;&gt;发布新blog&lt;/h3&gt;
+
+&lt;p&gt;在命令行窗口中,执行下面的命令 &lt;strong&gt;[确保在/d/hexo目录下]&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo new &amp;quot;New Post&amp;quot;
+[info] File created at d:\Hexo\source\_posts\New-Post.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重启服务并访问,可以发现已生成了一篇新文章 &amp;ldquo;New Post&amp;rdquo;。&lt;/p&gt;
+
+&lt;p&gt;到这里为止呢,本地的hexo静态博客已经搭建完成了,但是自己写的博客还是希望别人也能看到呢~所以&amp;hellip;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;部署至github&#34;&gt;部署至GitHub&lt;/h2&gt;
+
+&lt;h3 id=&#34;注册github&#34;&gt;注册GitHub&lt;/h3&gt;
+
+&lt;p&gt;前往&lt;font size=&#34;+2&#34; style=&#34;color: #00FFFF;&#34;&gt;&lt;a href=&#34;http://www.github.com&#34;&gt;GitHub官网&lt;/a&gt;&lt;/font&gt;注册GitHub账号&lt;/p&gt;
+
+&lt;h3 id=&#34;建立repository&#34;&gt;建立Repository&lt;/h3&gt;
+
+&lt;p&gt;建立与用户名对应的仓库,仓库名必须为【your_user_name.github.io】
+(比如我的用户名为horc-fn,则对应的仓库名为:horc-fn.github.io)&lt;/p&gt;
+
+&lt;h3 id=&#34;config-yml&#34;&gt;&lt;em&gt;_config.yml&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;编辑Hexo目录下的_config.yml文件,修改Deployment部分:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  message:
+  repo:
+    github: https://github.com/horc-fn/horc-fn.github.io.git,master
+    # gitcafe: &amp;lt;repository url&amp;gt;,[branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;部署&#34;&gt;部署&lt;/h3&gt;
+
+&lt;p&gt;执行命令:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo deploy  #或者:hexo d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;发现报错了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ERROR Deployer not found: git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;需要安装hexo部署到git的插件,运行命令:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-deployer-git --save
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;再次执行:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;再次报错,原来现在必须要配置SSH key,使用SSH上传。&lt;/p&gt;
+
+&lt;h3 id=&#34;github-ssh-key&#34;&gt;GitHub SSH-Key&lt;/h3&gt;
+
+&lt;h4 id=&#34;设置git的user-name和user-email&#34;&gt;设置Git的user.name和user.email&lt;/h4&gt;
+
+&lt;p&gt;在第一次使用Git时,你需要告诉你的协同开发者,你是谁以及你的邮箱,在你提交的时候,Git需要这两个信息。具体通过以下命令设置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;horc-fn&amp;quot;
+$ git config --global user.email &amp;quot;horcxc@sina.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;需要注意的是,这里的name随意,邮箱是你的联系邮箱,与github完全无关。
+查看配置命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;生成ssh密钥&#34;&gt;生成SSH密钥&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa -C &amp;quot;horcxc@sina.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;按3个回车,密码为空&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/horc/.ssh/id_rsa):
+Created directory &#39;/c/Users/horc/.ssh&#39;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/horc/.ssh/id_rsa.
+Your public key has been saved in /c/Users/horc/.ssh/id_rsa.pub.
+The key fingerprint is:
+.e6:9e:e7:ae:ad:ee:9f:f0:e5:6b:60:63:85:e8:cd:ae horcxc@sina.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在Created directory得到的目录/c/Users/horc/.ssh下,得到两个文件id_rsa和id_rsa.pub。
+需要注意的是,命令中的-C参数,后面跟的内容是注释。也就是说,内容随意,与github完全无关。&lt;/p&gt;
+
+&lt;h4 id=&#34;在github上添加ssh密钥&#34;&gt;在GitHub上添加SSH密钥&lt;/h4&gt;
+
+&lt;p&gt;打开id_rsa.pub,复制全文。进入&lt;font size=&#34;+2&#34; style=&#34;color: #00FFFF;&#34;&gt;&lt;a href=&#34;https://github.com/settings/ssh&#34;&gt;https://github.com/settings/ssh&lt;/a&gt;&lt;/font&gt; ,Add SSH key,粘贴进去。&lt;/p&gt;
+
+&lt;h4 id=&#34;ssh连接测试&#34;&gt;ssh连接测试&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ssh git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;提示:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The authenticity of host &#39;github.com (192.30.252.128)&#39; can&#39;t be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &#39;github.com,192.30.252.128&#39; (RSA) to the list of known hosts.
+Hi voidking! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;成功连接了！接下来再次修改*_config.yml*文件的Deployment部分&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  message:
+  repo:
+    github: git@github.com:horc-fn/horc-fn.github.io.git,master
+    # gitcafe: &amp;lt;repository url&amp;gt;,[branch]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;再次部署&#34;&gt;再次部署&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;根据提示输入用户名和密码,等待一会儿便成功了！!&lt;/p&gt;
+
+&lt;h3 id=&#34;访问测试&#34;&gt;访问测试&lt;/h3&gt;
+
+&lt;p&gt;访问 &lt;font size=&#34;+2&#34; style=&#34;color: #00FFFF;&#34;&gt;&lt;a href=&#34;http://horc-fn.github.io&#34;&gt;http://horc-fn.github.io&lt;/a&gt;&lt;/font&gt; ,可以看到,Hexo已经搭建成功！&lt;/p&gt;
+
+&lt;h3 id=&#34;总结&#34;&gt;总结&lt;/h3&gt;
+
+&lt;h4 id=&#34;部署步骤&#34;&gt;部署步骤&lt;/h4&gt;
+
+&lt;p&gt;每次部署的步骤,可按以下三步来进行。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo clean
+$ hexo g
+$ hexo d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;本地调试&#34;&gt;本地调试&lt;/h4&gt;
+
+&lt;p&gt;每次部署之前,可以现在本地调试:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo g 
+$ hexo s 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;常用命令&#34;&gt;常用命令&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hexo new &amp;quot;postName&amp;quot; #新建文章
+$ hexo new page &amp;quot;pageName&amp;quot; #新建页面
+$ hexo generate #生成静态页面至public目录 (或:hexo g)
+$ hexo server #开启预览访问端口 (或:hexo s)
+$ hexo deploy #将.deploy目录部署到GitHub (或:hexo d)
+$ hexo help  # 查看帮助
+$ hexo version  #查看Hexo的版本
+$ hexo deploy -g  #生成加部署 (或:hexo d -g)
+$ hexo server -g  #生成加预览 (或:hexo s -g)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;集成第三方服务&#34;&gt;集成第三方服务&lt;/h2&gt;
+
+&lt;h3 id=&#34;多说评论&#34;&gt;多说评论&lt;/h3&gt;
+
+&lt;p&gt;写了博客,别人看到却不能说点什么,会有点小别扭,多说帮我们解决了这个问题~
+&amp;gt; Note:duoshuo_shortname 不是你的多说登录的id&lt;/p&gt;
+
+&lt;p&gt;使用多说前需要先在 &lt;font size=&#34;+2&#34; style=&#34;color: #00FFFF;&#34;&gt;&lt;a href=&#34;http://duoshuo.com/&#34;&gt;多说&lt;/a&gt;&lt;/font&gt; 创建一个站点。具体步骤如下：
+1. 登录后在首页选择 “我要安装”。
+2. 创建站点,填写站点相关信息。 多说域名 这一栏填写的即是你的 duoshuo_shortname
+3. 创建站点完成后在站点配置文件中新增 duoshuo_shortname 字段,值设置成上一步中的值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;duoshuo_shortname: horcxc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;关于hexo主题-优化-配置等以后再做补充&#34;&gt;关于Hexo主题,优化,配置等以后再做补充&lt;/h2&gt;
+
+&lt;p&gt;待续~&lt;/p&gt;
+
+&lt;h2 id=&#34;最后说两句&#34;&gt;最后说两句&lt;/h2&gt;
+
+&lt;p&gt;到这里算是差不多了,选择next主题,简单明了,以后有什么需要大量记忆或者很好玩的就放到这里吧~&lt;/p&gt;
+
+&lt;!-- 使得超链接打开新的标签页 --&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+    $(document).ready(function() {
+        $(&#39;a[href^=&#34;http&#34;]&#39;).each(function() {
+            $(this).attr(&#39;target&#39;, &#39;_blank&#39;);
+        });
+    });
+&lt;/script&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
